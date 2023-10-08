@@ -1,6 +1,8 @@
 import { useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SigninForm = () => {
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     email: "",
     password:"",
@@ -26,7 +28,13 @@ const SigninForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+     const validationErrors = validateValues(loginData);
+
+    if (Object.keys(validationErrors).length === 0) {
+      navigate("/pages/VerificationPage");
+    }else{
     setErrors(validateValues(loginData));
+    }
     setSubmitting(true);
   };
 

@@ -10,17 +10,13 @@ export const navLinks = [
     title: "Product",
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: "features",
+    title: "Features",
   },
   {
-    id: "faqs",
-    title: "FAQs",
+    id: "signin",
+    title: "SignIn",
   },
-  {
-    id: "settings",
-    title: "Settings"
-  }
 ];
 
 export const features = [

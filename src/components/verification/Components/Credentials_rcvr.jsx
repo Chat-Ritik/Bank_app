@@ -1,16 +1,39 @@
 import React, { useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaCopy } from "react-icons/fa";
 
-const Credentials = () => {
+const Credentials_rcvr = () => {
   const [formData, setFormData] = useState({
     aadhar: "",
     pan: "",
-    salaryReceipt: null,
+    familytreedocument: null,
   });
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [randomCode, setRandomCode] = useState("");
+  const [isCodeCopied, setIsCodeCopied] = useState(false);
+
+  const generateRandomCode = () => {
+    // Generate a random 10-character code
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let code = "";
+    for (let i = 0; i < 10; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      code += characters.charAt(randomIndex);
+    }
+    return code;
+  };
+
+  const copyCodeToClipboard = () => {
+    // Copy the code to the clipboard
+    navigator.clipboard.writeText(randomCode);
+    setIsCodeCopied(true);
+    // Reset the "Copied!" message after 3 seconds
+    setTimeout(() => {
+      setIsCodeCopied(false);
+    }, 3000);
+  };
 
   const validateFormData = () => {
     let errors = {};
@@ -34,7 +57,7 @@ const Credentials = () => {
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0]; // Get the selected file
-    setFormData({ ...formData, salaryReceipt: file }); // Update the state with the selected file
+    setFormData({ ...formData, familytreedocument: file }); // Update the state with the selected file
   };
 
   const handleSubmit = (e) => {
@@ -45,16 +68,13 @@ const Credentials = () => {
     if (Object.keys(validationErrors).length === 0) {
       setIsLoading(true);
 
-      // Simulate a delay for verification (replace with actual API call)
+      // Generate a random code after a 2-second delay (simulated verification)
       setTimeout(() => {
+        const code = generateRandomCode();
         setIsLoading(false);
+        setRandomCode(code);
         setSubmitted(true);
-
-        // Clear the success message after 5 seconds
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 5000);
-      }, 2000); // Simulated 2-second delay for verification
+      }, 2000);
     }
   };
 
@@ -67,10 +87,13 @@ const Credentials = () => {
           <p className="text-white tracking-wider mt-3">You shall be notified once the details are verified.</p>
         </>
       ) : submitted ? (
+        <>
         <div className="text-green-500 text-2xl flex items-center">
-          <FaCheckCircle size={30} className="mr-2" /> 
+          <FaCheckCircle size={30} className="mr-2" />
           Successfully verified
         </div>
+        <div className=" text-sm text-white animate-pulse">One final push, Send this code to your sender, and you are there!! </div>
+        </>
       ) : (
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -111,19 +134,19 @@ const Credentials = () => {
 
           {/* File Upload */}
           <div className="mb-4">
-            <label htmlFor="salaryReceipt" className="block font-semibold mb-2 text-gray-400">
-              Upload Salary Receipt
+            <label htmlFor="familytreedocument" className="block font-semibold mb-2 text-gray-400">
+              Upload Family Tree Document
             </label>
             <input
               type="file"
-              id="salaryReceipt"
-              name="salaryReceipt"
+              id="familytreedocument"
+              name="familytreedocument"
               onChange={handleFileUpload}
               accept=".pdf,.jpg,.jpeg,.png"
               className="w-full p-2 border border-gray-400 rounded focus:outline-none focus:border-secondary"
             />
-            {formData.salaryReceipt && (
-              <p className="text-gray-500 mt-2">Selected file: {formData.salaryReceipt.name}</p>
+            {formData.familytreedocument && (
+              <p className="text-gray-500 mt-2">Selected file: {formData.familytreedocument.name}</p>
             )}
           </div>
 
@@ -135,8 +158,20 @@ const Credentials = () => {
           </button>
         </form>
       )}
+      {submitted && (
+        <div className="mt-4 bg-white rounded-lg p-3 flex items-center">
+          <div className="flex-grow">{randomCode}</div>
+          <button
+            onClick={copyCodeToClipboard}
+            className="bg-grey-500 text-black rounded-lg p-2 ml-3 flex items-center"
+          >
+            <FaCopy className="mr-2" />
+            {isCodeCopied ? "Copied!" : "Copy Code"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Credentials;
+export default Credentials_rcvr;

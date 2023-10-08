@@ -3,9 +3,10 @@ import { Route,Routes } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import Homepage from "./pages/Homepage.jsx";
 import VerificationPage from "./pages/VerificationPage.jsx";
+import VerificationPage_rcvr from "./pages/VerficationPage_rcvr.jsx";
 
 const ErrorPage = () => {
-  return <div>404 - Page Not Found</div>;
+  return <div className="text-red-700 font-xl">404 - Page Not Found</div>;
 };
 
 const App = () => {
@@ -14,6 +15,8 @@ const App = () => {
       <Routes>
         <Route exact path = "/" element={<Homepage/>}/>
         <Route path="/pages/Login" element={<Login/>} />
+        <Route path="/pages/VerificationPage" element={<VerificationPage/>}/>
+        <Route path="/pages/VerificationPage_rcvr" element={<VerificationPage_rcvr/>}/>
         <Route element={ErrorPage}/>
       </Routes>
     </>

@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import Switch from "react-switch";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -17,6 +20,7 @@ const SignupForm = () => {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [otpClicked, setOtpClicked] = useState(false);
+  const [isSender, setIsSender] = useState(false); // Added isSender state
 
   const validateValues = (formData, otpClicked) => {
     let errors = {};
@@ -39,20 +43,34 @@ const SignupForm = () => {
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  
+
   const handleOtpClick = () => {
     setOtpClicked(true);
   };
 
+  // Toggle the isSender state
+  const handleToggleClick = () => {
+    setIsSender(!isSender);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErrors(validateValues(formData));
+    const validationErrors = validateValues(formData, otpClicked);
+
+    if (Object.keys(validationErrors).length === 0 && isSender) {
+      navigate("/pages/VerificationPage");
+    } else if (Object.keys(validationErrors).length === 0 && !isSender) {
+      navigate("/pages/VerificationPage_rcvr");
+    } else {
+      setErrors(validationErrors);
+    }
     setSubmitting(true);
   };
 
   const finishSubmit = () => {
     console.log(formData);
   };
+
   useEffect(() => {
     if (Object.keys(errors).length === 0 && submitting) {
       finishSubmit();
@@ -310,6 +328,24 @@ const SignupForm = () => {
                   >
                     Confirm Password
                   </label>
+                </div>
+
+        
+                <div className="mt-6 flex items-center">
+                  <label className="mr-2">Are you the Sender?</label>
+                  <Switch
+                  id="isSender"
+                  name="isSender"
+                  checked={isSender}
+                  onChange={handleToggleClick}
+                  onColor="#377484" 
+                  offColor="#999"   
+                  uncheckedIcon={false}
+                  checkedIcon={false}
+                  width={40}         
+                  height={20}       
+                  handleDiameter={16} 
+                />
                 </div>
 
                 <input

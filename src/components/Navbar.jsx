@@ -1,15 +1,17 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { close, logo, menu } from "../assets";
+import { close, Logo_Light, menu } from "../assets";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="CoinFusion" className="w-[136px] h-[40px]" />
+      <img src={Logo_Light} alt="CoinFusion" className="w-[136px] h-[40px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
@@ -20,7 +22,13 @@ const Navbar = () => {
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            {nav.id !== "signin" ? (
+              <a href={`#${nav.id}`}>{nav.title}</a>
+            ) : (
+              <a href="/pages/Login" onClick={() => navigate("/pages/Login")}>
+                Login
+              </a>
+            )}
           </li>
         ))}
       </ul>

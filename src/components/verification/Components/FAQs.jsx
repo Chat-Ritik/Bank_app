@@ -46,8 +46,8 @@ const FAQs = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-      <div className="bg-white rounded">
+      <h2 className="text-2xl font-semibold mb-4 text-gradient">Frequently Asked Questions</h2>
+      <div className="bg-gradient-to-r from-lightgray via-lightgray to-darkgray rounded">
         {faqData.map((faq, index) => (
           <div
             key={index}
@@ -58,11 +58,12 @@ const FAQs = () => {
             <button
               onClick={() => handleAccordionClick(index)}
               className="w-full text-left p-3 font-semibold hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+              style={{ height: "50px" }}
             >
-              {faq.question}
+              <span className="mr-2 inline-block animate-pulse">+</span> {faq.question}
             </button>
             <div
-              className={`p-3 transition-max-height ease-in-out duration-300 ${
+              className={`pl-3 transition-max-height ease-in-out duration-300 ${
                 activeIndex === index ? "max-h-96" : "max-h-0 overflow-hidden"
               }`}
             >

@@ -4,11 +4,12 @@ import binance from "./binance.png";
 import card from "./card.png";
 import coinbase from "./coinbase.png";
 import dropbox from "./dropbox.png";
-import logo from "./logo.png";
+import Logo_Light from "./Logo_Light.png";
 import quotes from "./quotes.svg";
 import robot from "./robot.png";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
+import logo from "./logo.png";
 import star from "./Star.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
@@ -23,6 +24,7 @@ import twitter from "./twitter.svg";
 import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
+import credit_card from "./credit_card.jpeg";
 
 export {
   airbnb,
@@ -30,7 +32,9 @@ export {
   binance,
   card,
   coinbase,
+  credit_card,
   dropbox,
+  Logo_Light,
   logo,
   quotes,
   robot,

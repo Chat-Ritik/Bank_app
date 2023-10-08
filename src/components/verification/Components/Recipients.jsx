@@ -18,7 +18,7 @@ const Recepients = () => {
       setRecipientCodes([...recipientCodes, code]);
       setCode("");
     } else {
-      setError("Invalid code. Please enter a 10-digit code.");
+      setError("Invalid code. You cannot add this recipient.");
     }
   };
 
@@ -30,10 +30,10 @@ const Recepients = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">Add Recipients</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-gradient">Add Recipients</h2>
       <div className="mb-4">
-        <label htmlFor="code" className="block font-semibold mb-2">
-          Enter Recipient Code (10-digit)
+        <label htmlFor="code" className="block font-semibold mb-2 text-gray-400">
+          Enter Recipient Code
         </label>
         <input
           type="text"
@@ -41,14 +41,15 @@ const Recepients = () => {
           name="code"
           value={code}
           onChange={handleCodeChange}
-          className="w-full p-2 border rounded focus:outline-none focus:border-primary"
+          className="w-full p-2 border rounded focus:outline-none focus:border-secondary"
+          autoComplete="off"
         />
         {error && <p className="text-red-500 mt-1">{error}</p>}
       </div>
 
       <button
         onClick={handleAddRecipient}
-        className="bg-primary text-white font-semibold py-2 px-4 rounded hover:bg-secondary focus:outline-none focus:bg-secondary"
+        className="bg-blue-gradient text-black font-semibold py-2 px-4 rounded  ease-in-out transform hover:scale-110 transition duration-200"
       >
         Add Recipient
       </button>
@@ -57,7 +58,7 @@ const Recepients = () => {
         {recipientCodes.map((recipient, index) => (
           <div
             key={index}
-            className="bg-white p-2 rounded-full inline-flex items-center mr-2 mb-2"
+            className="bg-gradient-to-b from-lightBlue via-lightBlue to-blue p-2 rounded-full inline-flex items-center mr-2 mb-2"
           >
             {recipient}
             <button

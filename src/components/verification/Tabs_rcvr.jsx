@@ -1,6 +1,6 @@
 import React,{ useState , useEffect } from "react";
 
-const Tabs = ({ activeTab, onTabClick }) => {
+const Tabs_rcvr = ({ activeTab, onTabClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = () => {
@@ -32,14 +32,6 @@ const Tabs = ({ activeTab, onTabClick }) => {
         </li>
         <li
           className={`cursor-pointer px-4 py-2 ${
-            activeTab === "recipients" ? "bg-blue-gradient text-black ease-in-out transform hover:scale-110 transition duration-300 rounded-tl-xl rounded-br-xl" : ""
-          }`}
-          onClick={() => onTabClick("recipients")}
-        >
-          Recipients
-        </li>
-        <li
-          className={`cursor-pointer px-4 py-2 ${
             activeTab === "dashboard" ? "bg-blue-gradient text-black ease-in-out transform hover:scale-110 transition duration-300 rounded-tl-xl rounded-br-xl" : ""
           }`}
           onClick={() => onTabClick("dashboard")}
@@ -68,4 +60,4 @@ const Tabs = ({ activeTab, onTabClick }) => {
   );
 };
 
-export default Tabs;
+export default Tabs_rcvr;

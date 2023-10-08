@@ -10,6 +10,10 @@ module.exports = {
         tertiary: "#377484",//"#060047",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "rgba(9, 151, 124, 0.1)",
+        lightgray: "#c0bec2",
+        darkgray: "#26222e",
+        lightBlue: "#a3eef1",
+        blue:"#38c0d2"
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
