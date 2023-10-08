@@ -24,7 +24,9 @@ import twitter from "./twitter.svg";
 import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
-import credit_card from "./credit_card.jpeg";
+import credit_card from "./credit_card.png";
+import robot1 from "./robot1.png";
+import robot2 from "./robot2.png";
 
 export {
   airbnb,
@@ -38,6 +40,8 @@ export {
   logo,
   quotes,
   robot,
+  robot2,
+  robot1,
   send,
   shield,
   star,
