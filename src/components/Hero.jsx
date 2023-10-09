@@ -28,7 +28,7 @@ const Hero = () => {
         Redefined Today.
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        We assess the NRI's salary slip and extend a credit limit within India, enabling their family members to access and utilize funds locally.
+        We extend a credit limit to NRI's family within India, enabling their family members to access and utilize funds locally.
         </p>
       </div>
 

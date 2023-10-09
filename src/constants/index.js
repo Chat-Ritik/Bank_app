@@ -57,7 +57,7 @@ export const features = [
     icon: star,
     title: "Build Credit Score",
     content:
-      "Get the oppurtunity to increase credit score while sahring money to India and claim exciting rewards.",
+      "Get the oppurtunity to increase credit score while sharing money to India and claim exciting rewards.",
   },
 ];
 
