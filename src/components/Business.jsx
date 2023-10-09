@@ -2,6 +2,10 @@ import { features } from "../constants";
 import styles, { layout } from "../style";
 import Button from "./Button";
 
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
+
 const FeatureCard = ({ icon, title, content, index }) => (
   <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
     <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}>
@@ -21,17 +25,17 @@ const FeatureCard = ({ icon, title, content, index }) => (
 const Business = () =>  (
   <section id="features" className={layout.section}>
     <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>
+      {/* <h2 className={styles.heading2}>
         You do the business, <br className="sm:block hidden" /> we’ll handle
         the money.
+      </h2> */}
+      <h2 className={styles.heading2}>
+        Managing NRI payments, <br className="sm:block hidden" /> the way you envision.
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        With the right credit card, you can improve your financial life by
-        building credit, earning rewards and saving money. But with hundreds
-        of credit cards on the market.
-      </p>
+      Build your credit score while sending money to your loved ones back home instantly without any transaction or hidden fee. </p> 
 
-      <Button styles={`mt-10`} />
+      <Button styles={`mt-10`} onClick={scrollToTop} />
     </div>
 
     <div className={`${layout.sectionImg} flex-col`}>

@@ -10,7 +10,7 @@ import { FaArrowUp } from "react-icons/fa";
 import Bar from "./components/Bar";
 import Pie from "./components/Pie";
 import Button from "./components/Button";
-import SparkLine from "./components/SparkLine";
+//import SparkLine from "./components/SparkLine";
 import LineChart from "./components/LineChart";
 import Members_rcvr from "./components/Members_rcvr";
 
@@ -137,7 +137,7 @@ const App_rcvr = () => {
                 <p className="text-3xl font-semibold">$350</p>
                 <p className="text-gray-500 mt-1">Expense</p>
               </div>
-              <div className="mt-5">
+              {/* <div className="mt-5">
                 <SparkLine
                   id="line-sparkLine"
                   type="Line"
@@ -146,7 +146,7 @@ const App_rcvr = () => {
                   data={SparklineAreaData}
                   color="blue"
                 />
-              </div>
+              </div> */}
               <div className="mt-10">
                 <Button
                   color="white"

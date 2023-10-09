@@ -7,7 +7,7 @@ import { ContextProvider } from "./components/verification/Components/Dashboard/
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Bank_app">
       <ContextProvider>
         <App />
       </ContextProvider>

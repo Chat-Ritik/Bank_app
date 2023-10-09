@@ -20,9 +20,9 @@ const Homepage = () => (
         <Stats />
         <Business />
         <Billing />
-        <CardDeal />
-        <Testimonials />
-        <Clients />
+        {/* <CardDeal /> */}
+        {/* <Testimonials /> */}
+        {/* <Clients /> */}
         <CTA />
         <Footer />
       </div>

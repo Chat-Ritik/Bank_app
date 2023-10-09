@@ -1,9 +1,27 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import {
+  money,
+  iso,
+  encrypt,
+  people01,
+  people02,
+  people03,
+  facebook,
+  instagram,
+  linkedin,
+  twitter,
+  airbnb,
+  binance,
+  coinbase,
+  dropbox,
+  send,
+  shield,
+  star,
+} from "../assets";
 
 export const navLinks = [
   {
     id: "home",
-    title: "Home1234",
+    title: "Home",
   },
   {
     id: "product",
@@ -22,24 +40,24 @@ export const navLinks = [
 export const features = [
   {
     id: "feature-1",
-    icon: star,
-    title: "Rewards",
+    icon: send,
+    title: "Instant",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "Share money to India in real time and control how much to share using our user-friendly app.",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "100% Secured",
+    title: "0% fee",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "There is absolutely 0% transaction fee. Share Money to India at Live Google Rates.",
   },
   {
     id: "feature-3",
-    icon: send,
-    title: "Balance Transfer",
+    icon: star,
+    title: "Build Credit Score",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "Get the oppurtunity to increase credit score while sahring money to India and claim exciting rewards.",
   },
 ];
 
@@ -73,18 +91,18 @@ export const feedback = [
 export const stats = [
   {
     id: "stats-1",
-    title: "User Active",
-    value: "3800+",
+    title: "256-bit encrypted",
+    icon: encrypt,
   },
   {
     id: "stats-2",
-    title: "Trusted by Company",
-    value: "230+",
+    title: "Secure Money Handling.",
+    icon: money,
   },
   {
     id: "stats-3",
-    title: "Transaction",
-    value: "$230M+",
+    title: "ISO/IEC 27001:2013",
+    icon: iso,
   },
 ];
 

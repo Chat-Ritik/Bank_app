@@ -10,7 +10,7 @@ import { FaArrowUp } from "react-icons/fa";
 import Stacked from "./components/Stacked";
 import Pie from "./components/Pie";
 import Button from "./components/Button";
-import SparkLine from "./components/SparkLine";
+//import SparkLine from "./components/SparkLine";
 import LineChart from "./components/LineChart";
 import Members from "./components/Members";
 
@@ -143,7 +143,7 @@ const App = () => {
                 <p className="text-3xl font-semibold">$2500</p>
                 <p className="text-gray-500 mt-1">Expense</p>
               </div>
-              <div className="mt-5">
+              {/* <div className="mt-5">
                 <SparkLine
                   id="line-sparkLine"
                   type="Line"
@@ -152,7 +152,7 @@ const App = () => {
                   data={SparklineAreaData}
                   color="blue"
                 />
-              </div>
+              </div> */}
               <div className="mt-10">
                 <Button
                   color="white"
@@ -181,7 +181,7 @@ const App = () => {
               </div>
             </div>
 
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <SparkLine
                 id="column-sparkLine"
                 height="100px"
@@ -190,7 +190,7 @@ const App = () => {
                 width="320"
                 color="rgb(242, 252, 253)"
               />
-            </div>
+            </div> */}
           </div>
 
           <div className="bg-black-gradient dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">

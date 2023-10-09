@@ -9,6 +9,10 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
+  const handleLoginClick = () =>{
+    navigate("/pages/Login");
+  };
+
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
       <img src={Logo_Light} alt="CoinFusion" className="w-[200px] h-[50px]" />
@@ -25,7 +29,8 @@ const Navbar = () => {
             {nav.id !== "signin" ? (
               <a href={`#${nav.id}`}>{nav.title}</a>
             ) : (
-              <a href="/pages/Login" onClick={() => navigate("/pages/Login")}>
+               <a onClick={handleLoginClick}>
+              {/*onClick={() => navigate("/Bank_app/pages/Login")}> */}
                 Login
               </a>
             )}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 
 import { customersData } from "../data/dummy";
+import MoneyScroller from "./MoneyScroller";
 
 const Members = () => {
   const [selectedRows, setSelectedRows] = useState([]);
@@ -87,11 +88,10 @@ const handleDelete = () => {
                 <tr>
                   <td colSpan="4" className="px-4 py-2">
                     <div
-                      className="bg-gray-200 h-48 p-4 rounded-md transition-max-h duration-500"
+                      className="bg-gradient-to-br from-white via-gray-400 to-gray-300 h-48 p-4 rounded-md transition-max-h duration-500"
                       style={{ width: "100%" }}
                     >
-                      {/* Content for the expanded row */}
-                      {/* You can add content specific to the expanded row here */}
+                      <MoneyScroller/>
                     </div>
                   </td>
                 </tr>
