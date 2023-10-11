@@ -6,6 +6,10 @@ function MoneyScroller() {
 
   const handleScrollerChange = (e) => {
     setMoney(e.target.value);
+    // Update the slider background color based on the current value
+    const percentage = (e.target.value / 1000) * 100; 
+    const gradientColor = `linear-gradient(to right, #66fcf1 ${percentage}%, #0a192f ${percentage}%)`;
+    e.target.style.background = gradientColor;
   };
 
   return (
@@ -32,3 +36,4 @@ function MoneyScroller() {
 }
 
 export default MoneyScroller;
+

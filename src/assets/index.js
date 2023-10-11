@@ -43,6 +43,7 @@ import sample3 from "./sample3.png";
 import sample4 from "./sample4.png"
 import sample5 from "./sample5.png"
 import sample5hd from "./sample5hd.png"
+import TwitterX from "./TwitterX.png"
 
 export {
   airbnb,
@@ -90,4 +91,5 @@ export {
   people01,
   people02,
   people03,
+  TwitterX,
 };

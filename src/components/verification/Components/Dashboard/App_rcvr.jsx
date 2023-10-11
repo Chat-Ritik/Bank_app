@@ -165,10 +165,9 @@ const App_rcvr = () => {
         <div className="flex gap-5 flex-wrap justify-center">
           <div className="bg-primary dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl">
             <Members_rcvr />
-            <LineChart />
           </div>
 
-          <div className="bg-blue dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-9/12 md:w-760 hover:ease-in-out transform hover:scale-110 transition duration-500 ">
+          {/* <div className="bg-blue dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-9/12 md:w-760 hover:ease-in-out transform hover:scale-110 transition duration-500 ">
             <div className="overflow-auto">
               <SampleRewards />
             </div>
@@ -181,11 +180,10 @@ const App_rcvr = () => {
             <div className="w-40">
               <Pie data={ecomPieChartData} />
             </div>
-          </div>
+          </div> */}
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
