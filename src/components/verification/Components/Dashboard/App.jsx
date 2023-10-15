@@ -1,57 +1,41 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
-//import { GoPrimitiveDot } from 'react-icons/go';
 import { BsDot } from "react-icons/bs";
-import { IoIosMore } from "react-icons/io";
-import { FaArrowUp } from "react-icons/fa";
-
-//import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
-
 import Stacked from "./components/Stacked";
 import Pie from "./components/Pie";
 import Button from "./components/Button";
-//import SparkLine from "./components/SparkLine";
-import LineChart from "./components/LineChart";
 import Members from "./components/Members";
-
 import {
   earningData,
-  medicalproBranding,
-  recentTransactions,
-  weeklyStats,
-  SparklineAreaData,
   ecomPieChartData,
 } from "./data/dummy";
-import product9 from "./data/product9.jpg";
 import SampleRewards from "./components/SampleRewards";
-//import { ChartData } from '@syncfusion/ej2/documenteditor';
+//import { useUserContext } from "./contexts/UserContext";//added
 
-/*const DropDown = () => (
-  <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
-    <DropDownListComponent id="time" fields={{ text: 'Time', value: 'Id' }} style={{ border: 'none', color:'white' }} value="1" dataSource={dropdownData} popupHeight="220px" popupWidth="120px" />
-  </div>
-);*/
 
 const App = () => {
-  /*const stackedData = {
-  labels: ['Category 1', 'Category 2', 'Category 3'],
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: [10, 20, 30],
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgba(255, 99, 132, 1)',
-      borderWidth: 1,
-    },
-    {
-      label: 'Dataset 2',
-      data: [15, 25, 35],
-      backgroundColor: 'rgba(54, 162, 235, 0.2)',
-      borderColor: 'rgba(54, 162, 235, 1)',
-      borderWidth: 1,
-    },
-  ],
-};*/
+  //const { userEmail } = useUserContext();
+  // const [selectedUserEmail, setSelectedUserEmail] = useState(userEmail);
+  // const [userData, setUserData] = useState(null);
+
+  // useEffect(() => {
+  //   fetch('/src/components/verification/Dashboard/data/users.json')
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     const selectedUserData = data.users.find(user => user.email === selectedUserEmail);
+  //       setUserData(selectedUserData);
+  //     })
+  //     .catch(error => {
+  //       console.error("Error fetching user data:" + error);
+  //     });
+  // }, [selectedUserEmail]);
+
+  // if (userData === null) {
+  //   // Handle the case when userData is null, you can display a loading spinner or an error message.
+  //   return <div>Loading...</div>;
+  // }
+
+  // const earningData = getEarningData(userData);
 
   return (
     <div className="mt-19">
@@ -140,19 +124,10 @@ const App = () => {
                 <p className="text-gray-500 mt-1">Budget</p>
               </div>
               <div className="mt-8">
-                <p className="text-3xl font-semibold">$2500</p>
+                <p className="text-3xl font-semibold">2500</p>
                 <p className="text-gray-500 mt-1">Expense</p>
               </div>
-              {/* <div className="mt-5">
-                <SparkLine
-                  id="line-sparkLine"
-                  type="Line"
-                  height="80px"
-                  width="250px"
-                  data={SparklineAreaData}
-                  color="blue"
-                />
-              </div> */}
+              
               <div className="mt-10">
                 <Button
                   color="white"
@@ -180,17 +155,6 @@ const App = () => {
                 <p className="text-gray-100 animate-pulse">Fair</p>
               </div>
             </div>
-
-            {/* <div className="mt-4">
-              <SparkLine
-                id="column-sparkLine"
-                height="100px"
-                type="Column"
-                data={SparklineAreaData}
-                width="320"
-                color="rgb(242, 252, 253)"
-              />
-            </div> */}
           </div>
 
           <div className="bg-black-gradient dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
@@ -209,7 +173,6 @@ const App = () => {
       <div className="flex gap-5 flex-wrap justify-center">
         <div className="bg-primary dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl">
           <Members />
-          <LineChart />
         </div>
 
         <div className="bg-blue dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-9/12 md:w-760 hover:ease-in-out transform hover:scale-110 transition duration-500 ">

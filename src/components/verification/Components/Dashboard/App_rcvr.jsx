@@ -1,58 +1,15 @@
 import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
-//import { GoPrimitiveDot } from 'react-icons/go';
 import { BsDot } from "react-icons/bs";
-import { IoIosMore } from "react-icons/io";
-import { FaArrowUp } from "react-icons/fa";
-
-//import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
-
 import Bar from "./components/Bar";
-import Pie from "./components/Pie";
 import Button from "./components/Button";
-//import SparkLine from "./components/SparkLine";
-import LineChart from "./components/LineChart";
 import Members_rcvr from "./components/Members_rcvr";
 
 import {
   earningData_rcvr,
-  medicalproBranding,
-  recentTransactions,
-  weeklyStats,
-  SparklineAreaData,
-  ecomPieChartData,
 } from "./data/dummy";
-import product9 from "./data/product9.jpg";
-import SampleRewards from "./components/SampleRewards";
-//import { ChartData } from '@syncfusion/ej2/documenteditor';
-
-/*const DropDown = () => (
-  <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
-    <DropDownListComponent id="time" fields={{ text: 'Time', value: 'Id' }} style={{ border: 'none', color:'white' }} value="1" dataSource={dropdownData} popupHeight="220px" popupWidth="120px" />
-  </div>
-);*/
 
 const App_rcvr = () => {
-  /*const stackedData = {
-  labels: ['Category 1', 'Category 2', 'Category 3'],
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: [10, 20, 30],
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgba(255, 99, 132, 1)',
-      borderWidth: 1,
-    },
-    {
-      label: 'Dataset 2',
-      data: [15, 25, 35],
-      backgroundColor: 'rgba(54, 162, 235, 0.2)',
-      borderColor: 'rgba(54, 162, 235, 1)',
-      borderWidth: 1,
-    },
-  ],
-};*/
-
   return (
     <div className="mt-19">
       <div className="flex flex-wrap lg:flex-nowrap justify-center ">
@@ -137,16 +94,7 @@ const App_rcvr = () => {
                 <p className="text-3xl font-semibold">$350</p>
                 <p className="text-gray-500 mt-1">Expense</p>
               </div>
-              {/* <div className="mt-5">
-                <SparkLine
-                  id="line-sparkLine"
-                  type="Line"
-                  height="80px"
-                  width="250px"
-                  data={SparklineAreaData}
-                  color="blue"
-                />
-              </div> */}
+             
               <div className="mt-10">
                 <Button
                   color="white"
@@ -166,21 +114,6 @@ const App_rcvr = () => {
           <div className="bg-primary dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl">
             <Members_rcvr />
           </div>
-
-          {/* <div className="bg-blue dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl w-9/12 md:w-760 hover:ease-in-out transform hover:scale-110 transition duration-500 ">
-            <div className="overflow-auto">
-              <SampleRewards />
-            </div>
-            <div className="bg-black-gradient dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl md:w-400 p-8 m-3 flex justify-center items-center gap-10">
-            <div>
-              <p className="text-2xl font-semibold ">225</p>
-              <p className="text-gray-400">Total Coins Earned</p>
-            </div>
-
-            <div className="w-40">
-              <Pie data={ecomPieChartData} />
-            </div>
-          </div> */}
           </div>
         </div>
       </div>
